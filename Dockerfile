@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 ENV container docker
 
@@ -13,11 +13,16 @@ RUN find /etc/systemd/system \
 
 RUN apt-get update && \
     apt-get install -y \
+<<<<<<< HEAD
     dbus iproute && \
+=======
+    dbus systemd && \
+>>>>>>> upstream/bionic
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 RUN systemctl set-default multi-user.target
+RUN systemctl mask dev-hugepages.mount sys-fs-fuse-connections.mount
 
 COPY setup /sbin/
 
