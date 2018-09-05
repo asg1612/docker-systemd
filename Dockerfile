@@ -13,11 +13,7 @@ RUN find /etc/systemd/system \
 
 RUN apt-get update && \
     apt-get install -y \
-<<<<<<< HEAD
-    dbus iproute && \
-=======
     dbus systemd && \
->>>>>>> upstream/bionic
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
