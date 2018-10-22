@@ -13,7 +13,7 @@ RUN find /etc/systemd/system \
 
 RUN apt-get update && \
     apt-get install -y \
-    dbus systemd && \
+    dbus systemd iproute2 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
